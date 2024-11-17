@@ -44,4 +44,4 @@ jobs:
 
       - name: Sync build output to S3
         if: ${{ github.ref_name == 'main' }}
-        run: aws s3 sync ./out s3://npi-test-11011/
+        run: aws s3 sync ./out s3://npi-dev-frontend-hosting/
