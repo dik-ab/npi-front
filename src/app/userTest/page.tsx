@@ -1,6 +1,7 @@
 'use client';
 
-import { fetchUser, type User } from '@/api/user';
+import { fetchUser } from '@/api/user';
+import type { User } from '@/types/user';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -40,7 +41,7 @@ export default function Profile() {
   return (
     <div>
       <h1>Profile</h1>
-      <p>Username: {user.username}</p>
+      <p>Username: {user.name}</p>
       <p>Email: {user.email}</p>
     </div>
   );
