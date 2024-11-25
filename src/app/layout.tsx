@@ -1,5 +1,6 @@
 'use client'
 import Header from "@/components/common/Header";
+import { UserProvider } from "@/context/userContext";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 
 const theme = createTheme({
@@ -27,11 +28,13 @@ export default function RootLayout({
           padding: 0,
           minHeight: "100vh",
         }}>
+        <UserProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Header />
           {children}
         </ThemeProvider>
+        </UserProvider>
       </body>
     </html>
   );
