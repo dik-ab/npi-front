@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import NotificationBar from '../../components/NotificationBar';
 import AuthForm from '../../components/AuthForm';
 import { register } from '@/api/accounts';
+import { RegisterContainer } from '@/components/userRegister/registerContainer';
 
 const RegisterPage = () => {
   const [notification, setNotification] = useState({
@@ -33,13 +34,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <AuthForm onSubmit={handleRegister} buttonText="Register" />
-      <NotificationBar
-        open={notification.open}
-        message={notification.message}
-        severity={notification.severity}
-        onClose={() => setNotification((prev) => ({ ...prev, open: false }))}
-      />
+      <RegisterContainer />
     </>
   );
 };
