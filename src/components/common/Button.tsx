@@ -28,10 +28,10 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
         alignItems: "center",
         gap: icon ? "8px" : 0,
         padding: "10px 20px",
-        backgroundColor: "#6B818E",
-        color: "#fff",
+        backgroundColor: "#9DA8BB",
+        color: 'black',
         "&:hover": {
-          backgroundColor: "#8A9BA6",
+          backgroundColor: "#9DA8BB",
         },
         ...sx,
       }}
