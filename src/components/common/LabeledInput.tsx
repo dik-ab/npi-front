@@ -14,6 +14,7 @@ interface LabelledInputProps<T extends FieldValues>  {
   errorMessage?: string;
   helperText?: string;
   password?: boolean
+  required?: boolean;
 }
 
 export const LabelledInput = <T extends FieldValues>({
@@ -26,16 +27,39 @@ export const LabelledInput = <T extends FieldValues>({
   errorMessage,
   helperText,
   password = false,
+  required = false
 }: LabelledInputProps<T>) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+<Box
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    gap: "5px",
+    marginBottom: '5px'
+  }}
+>
       <Typography
         variant="body1"
-        sx={{ fontWeight: "bold", color: "#333", fontSize: "14px", marginBottom: "8px" }}
+        sx={{ fontWeight: "bold", color: "#333", fontSize: "14px" }}
       >
         {label}
       </Typography>
+        {required && (
+          <Box
+            sx={{
+              backgroundColor: "#f0f0f0",
+              borderRadius: "16px",
+              padding: "2px 8px",
+              fontSize: "12px",
+              color: "black",
+            }}
+          >
+            必須
+          </Box>
+        )}
+        </Box>
       <Controller
         name={name}
         control={control}

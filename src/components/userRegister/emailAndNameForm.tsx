@@ -52,6 +52,7 @@ export const EmailAndUsernameForm: React.FC<Props> = ({ onNext }) => {
         label="アカウント名"
         name="username"
         errorMessage={errors.username?.message}
+        required
       />
       <CustomButton
         variant="contained"

@@ -38,14 +38,16 @@ export const PasswordForm: React.FC<Props> = ({ onNext }) => {
         errorMessage={errors.password?.message}
         helperText="※パスワードは英字と数字をどちらも含む8~15字の半角英数記号でご設定ください。"
         password
+        required
       />
       <LabelledInput
         control={control}
-        label="確認用パスワード"
+        label="パスワード(確認用)"
         name="confirmPassword"
         errorMessage={errors.confirmPassword?.message}
         helperText="確認のためもう一度入力してください。"
         password
+        required
       />
       <CustomButton
         variant="contained"
