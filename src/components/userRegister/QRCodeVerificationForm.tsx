@@ -1,15 +1,21 @@
 import type React from "react";
 import { useRef, useState } from "react";
 import { Box, Typography, TextField, Button, Input } from "@mui/material";
+import CustomButton from "../common/Button";
 
 const QRCodeVerificationForm: React.FC = () => {
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState<string[]>(Array(6).fill(""))
   const inputsRef = useRef<HTMLInputElement[]>([]);
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     index: number
   ) => {
     const value = e.target.value;
+    if (value.length <= 1) {
+      const updatedCode = [...code];
+      updatedCode[index] = value; // 現在のインデックスの値を更新
+      setCode(updatedCode);
+    }
     if (value.length === 1 && inputsRef.current[index + 1]) {
       // 次のフィールドにフォーカスを移動
       inputsRef.current[index + 1].focus();
@@ -51,9 +57,9 @@ const QRCodeVerificationForm: React.FC = () => {
         />
       ))}
       </Box>
-      <Button variant="contained" disabled={code.length < 6}>
+      <CustomButton label="完了" variant="contained" disabled={code.some((char) => char === "")}>
         完了
-      </Button>
+      </CustomButton>
     </Box>
   );
 };
