@@ -2,11 +2,10 @@ import {
 	type EmailAndUsernameFormValues,
 	emailAndUsernameSchema,
 } from "@/schemas/authSchema";
-import type { UserRegisterInput } from "@/types/register";
+import type { UserRegisterInput } from "@/types/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box } from "@mui/material";
 import type React from "react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import CustomButton from "../common/Button";
 import { LabelledInput } from "../common/LabeledInput";

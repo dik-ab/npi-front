@@ -8,6 +8,7 @@ import {
 	type FieldValues,
 	type Path,
 } from "react-hook-form";
+import RequiredBadge from "./RequiredBadge";
 
 interface LabelledInputProps<T extends FieldValues> {
 	control: Control<T>;
@@ -51,19 +52,7 @@ export const LabelledInput = <T extends FieldValues>({
 				>
 					{label}
 				</Typography>
-				{required && (
-					<Box
-						sx={{
-							backgroundColor: "#f0f0f0",
-							borderRadius: "16px",
-							padding: "2px 8px",
-							fontSize: "12px",
-							color: "black",
-						}}
-					>
-						必須
-					</Box>
-				)}
+				{required && <RequiredBadge />}
 			</Box>
 			<Controller
 				name={name}
