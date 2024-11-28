@@ -4,7 +4,7 @@ import type React from "react";
 import { useState } from "react";
 import { HeaderWithContainer } from "../common/HeaderWithContainer";
 import { StepContent } from "./stepContent";
-import { StepIndicator } from "./stepIndicator";
+import { StepIndicator } from "../common/stepIndicator";
 
 export const RegisterContainer: React.FC = () => {
 	const [step, setStep] = useState(1);
