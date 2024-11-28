@@ -1,4 +1,4 @@
-import type { UserRegisterInput } from "@/types/register";
+import type { UserRegisterInput } from "@/types/auth";
 import type React from "react";
 import QRCodeVerificationForm from "./QRCodeVerificationForm";
 import { EmailAndUsernameForm } from "./emailAndNameForm";
