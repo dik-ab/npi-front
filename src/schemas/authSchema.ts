@@ -32,6 +32,13 @@ export const passwordFormSchema = z
 		path: ["confirmPassword"],
 	});
 
+export const loginFormSchema = z.object({
+	email: z.string().email("有効なメールアドレスを入力してください"),
+	password: z.string().min(1, "必須項目です"),
+});
+
 export type EmailAndUsernameFormValues = z.infer<typeof emailAndUsernameSchema>;
 
 export type PasswordFormValues = z.infer<typeof passwordFormSchema>;
+
+export type loginFormValues = z.infer<typeof loginFormSchema>;
