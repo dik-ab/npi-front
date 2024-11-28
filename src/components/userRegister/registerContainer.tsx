@@ -1,7 +1,8 @@
-import type { UserRegisterInput } from "@/types/register";
+import type { UserRegisterInput } from "@/types/auth";
 import { Box, Container, Typography } from "@mui/material";
 import type React from "react";
 import { useState } from "react";
+import { HeaderWithContainer } from "../common/HeaderWithContainer";
 import { StepContent } from "./stepContent";
 import { StepIndicator } from "./stepIndicator";
 
@@ -22,54 +23,21 @@ export const RegisterContainer: React.FC = () => {
 	};
 
 	const handleSubmit = () => console.log("ttest");
-	// ステップに応じたヘッダーのテキストを定義
 	const headerText = step === 3 ? "認証" : "新規登録";
 
 	return (
-		<Container
-			sx={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				minHeight: "100vh",
-			}}
-		>
-			<Box>
-				{/* ヘッダー */}
-				<Typography
-					variant="h5"
-					fontWeight="bold"
-					sx={{
-						textAlign: "center",
-						marginBottom: "20px",
-						color: "#000",
-					}}
-				>
-					{headerText}
-				</Typography>
-				<Box
-					sx={{
-						backgroundColor: "#fff",
-						padding: "20px",
-						borderRadius: "8px",
-						width: "400px",
-						boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-					}}
-				>
-					<StepIndicator step={step} totalSteps={3} />
-
-					<StepContent
-						step={step}
-						onNext={(data: Partial<UserRegisterInput>) => {
-							if (step < 3) {
-								handleNext(data);
-							} else {
-								handleSubmit();
-							}
-						}}
-					/>
-				</Box>
-			</Box>
-		</Container>
+		<HeaderWithContainer headerText={headerText}>
+			<StepIndicator step={step} totalSteps={3} />
+			<StepContent
+				step={step}
+				onNext={(data: Partial<UserRegisterInput>) => {
+					if (step < 3) {
+						handleNext(data);
+					} else {
+						handleSubmit();
+					}
+				}}
+			/>
+		</HeaderWithContainer>
 	);
 };

@@ -7,13 +7,13 @@ import VerificationCodeInput from "../common/VerificationCodeInput";
 const QRCodeVerificationForm: React.FC = () => {
 	const [isComplete, setIsComplete] = useState(false);
 
-  const handleInputChange = (code: string[]) => {
-    setIsComplete(code.every((char) => char !== ""));
-  };
+	const handleInputChange = (code: string[]) => {
+		setIsComplete(code.every((char) => char !== ""));
+	};
 
 	const handleComplete = (code: string) => {
-		console.log(code)
-	}
+		console.log(code);
+	};
 
 	return (
 		<Box
@@ -37,16 +37,12 @@ const QRCodeVerificationForm: React.FC = () => {
 				{/* QRコードを表示する領域 */}
 			</Box>
 			<Typography>② 表示された 6 桁のコードを入力してください。</Typography>
-      <VerificationCodeInput
-        length={6}
-        onComplete={handleComplete}
-        onChange={handleInputChange}
-      />
-			<CustomButton
-				label="完了"
-				variant="contained"
-				disabled={!isComplete}
-			>
+			<VerificationCodeInput
+				length={6}
+				onComplete={handleComplete}
+				onChange={handleInputChange}
+			/>
+			<CustomButton label="完了" variant="contained" disabled={!isComplete}>
 				完了
 			</CustomButton>
 		</Box>
