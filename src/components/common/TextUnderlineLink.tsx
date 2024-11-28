@@ -1,6 +1,6 @@
 import { Box, Link } from "@mui/material";
-import type React from "react";
 import type { SxProps, Theme } from "@mui/system";
+import type React from "react";
 
 interface TextUnderlineLinkProps {
 	href: string;

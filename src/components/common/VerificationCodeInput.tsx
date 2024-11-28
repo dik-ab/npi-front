@@ -44,8 +44,15 @@ const VerificationCodeInput: React.FC<VerificationCodeInputProps> = ({
 		}
 	};
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
-		if (e.key === "Backspace" && code[index] === "" && inputsRef.current[index - 1]) {
+	const handleKeyDown = (
+		e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
+		index: number,
+	) => {
+		if (
+			e.key === "Backspace" &&
+			code[index] === "" &&
+			inputsRef.current[index - 1]
+		) {
 			inputsRef.current[index - 1].focus();
 		}
 	};
@@ -67,7 +74,7 @@ const VerificationCodeInput: React.FC<VerificationCodeInputProps> = ({
 					}}
 					value={code[index]}
 					onChange={(e) => handleInputChange(e, index)}
-          onKeyDown={(e) => handleKeyDown(e, index)}
+					onKeyDown={(e) => handleKeyDown(e, index)}
 					sx={{
 						width: "40px",
 						height: "60px",

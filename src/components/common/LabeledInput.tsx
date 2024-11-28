@@ -52,9 +52,7 @@ export const LabelledInput = <T extends FieldValues>({
 				>
 					{label}
 				</Typography>
-				{required && (
-					<RequiredBadge />
-				)}
+				{required && <RequiredBadge />}
 			</Box>
 			<Controller
 				name={name}

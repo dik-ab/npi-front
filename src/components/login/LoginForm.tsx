@@ -24,41 +24,41 @@ const LoginForm = ({ onNext }: LoginFormProps) => {
 	});
 
 	return (
-    <>
-    <Box>
-		<Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-			<LabelledInput
-				control={control}
-				label="メールアドレス"
-				name="email"
-				errorMessage={errors.email?.message}
-				helperText=""
-			/>
-			<LabelledInput
-				control={control}
-				label="パスワード"
-				name="password"
-				errorMessage={errors.password?.message}
-				helperText=""
-				password
-				required
-			/>
-			<TextUnderlineLink
-				href="/forgot-password"
-				text="パスワードを忘れた場合"
-			/>
-		</Box>
-			<CustomButton
-				variant="contained"
-				type="submit"
-				sx={{
-					borderRadius: "8px",
-				}}
-				onClick={handleSubmit(onNext)}
-				label="次へ"
-			/>
-      </Box>
-    </>
+		<>
+			<Box>
+				<Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+					<LabelledInput
+						control={control}
+						label="メールアドレス"
+						name="email"
+						errorMessage={errors.email?.message}
+						helperText=""
+					/>
+					<LabelledInput
+						control={control}
+						label="パスワード"
+						name="password"
+						errorMessage={errors.password?.message}
+						helperText=""
+						password
+						required
+					/>
+					<TextUnderlineLink
+						href="/forgot-password"
+						text="パスワードを忘れた場合"
+					/>
+				</Box>
+				<CustomButton
+					variant="contained"
+					type="submit"
+					sx={{
+						borderRadius: "8px",
+					}}
+					onClick={handleSubmit(onNext)}
+					label="次へ"
+				/>
+			</Box>
+		</>
 	);
 };
 
