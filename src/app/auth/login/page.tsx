@@ -1,7 +1,7 @@
 "use client";
 
 import { LoginWithQr } from "@/components/login/LoginWithQr";
-import React, { useState } from "react";
+import React from "react";
 
 const LoginPage = () => {
 	return (
